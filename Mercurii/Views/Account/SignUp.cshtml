@@ -1,0 +1,69 @@
+﻿@model Model.DTO.UserDTO
+
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <form action="/Account/SignUp" class="form-horizontal" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <br />
+            <br />
+            <h2>Registration</h2>
+            <br />
+            <br />
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label class="control-label col-md-2">User Name</label>
+                    <div class="col-md-4">
+                        <input name="UserName" type="text" value="@Model.UserName" placeholder="Type your name" class="form-control input-md">
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Email</label>
+                    <div class="col-md-4">
+                        <input name="Email" type="text" value="@Model.Email" placeholder="And here goes your email" class="form-control input-md">
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Password</label>
+                    <div class="col-md-4">
+                        <input name="Password" type="password" value="@Model.Password" class="form-control input-md">
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Confirm Password</label>
+                    <div class="col-md-4">
+                        <input name="ConfirmPassword" type="password" value="@Model.ConfirmPassword" class="form-control input-md password-confirm" />
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-2">Image link</label>
+                    <div class="col-md-4">
+                        <input name="ImgLink" type="text" value="@Model.ConfirmPassword" placeholder="and now your image link" class="form-control input-md password-confirm" />
+                        @Html.ValidationMessageFor(model => model.ImgLink, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Get it Begun" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+

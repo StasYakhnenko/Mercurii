@@ -58,6 +58,18 @@
     <Compile Include="Migrations\201701191213559_Initial.Designer.cs">
       <DependentUpon>201701191213559_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701192303287_Have been added Messages.cs" />
+    <Compile Include="Migrations\201701192303287_Have been added Messages.Designer.cs">
+      <DependentUpon>201701192303287_Have been added Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192307597_fix.cs" />
+    <Compile Include="Migrations\201701192307597_fix.Designer.cs">
+      <DependentUpon>201701192307597_fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701192324164_Added friendships.cs" />
+    <Compile Include="Migrations\201701192324164_Added friendships.Designer.cs">
+      <DependentUpon>201701192324164_Added friendships.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
@@ -76,6 +88,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701191213559_Initial.resx">
       <DependentUpon>201701191213559_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192303287_Have been added Messages.resx">
+      <DependentUpon>201701192303287_Have been added Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192307597_fix.resx">
+      <DependentUpon>201701192307597_fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701192324164_Added friendships.resx">
+      <DependentUpon>201701192324164_Added friendships.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

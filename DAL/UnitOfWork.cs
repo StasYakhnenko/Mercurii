@@ -10,13 +10,15 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private MainContext context;
 
         #region Private Repositories
         private IGenericRepository<User> userRepo;
         private IGenericRepository<Role> roleRepo;
+        private IGenericRepository<Message> messageRepo;
+        private IGenericRepository<Friendship> friendshipRepo;
         #endregion Private Repositories
 
         public UnitOfWork()
@@ -25,6 +27,8 @@ namespace DAL
 
             roleRepo = new GenericRepository<Role>(context);
             userRepo = new GenericRepository<User>(context);
+            messageRepo = new GenericRepository<Message>(context);
+            friendshipRepo = new GenericRepository<Friendship>(context);
         }
 
         #region Repositories Getters
@@ -42,6 +46,24 @@ namespace DAL
             {
                 if (roleRepo == null) roleRepo = new GenericRepository<Role>(context);
                 return roleRepo;
+            }
+        }
+
+        public IGenericRepository<Message> MessageRepo
+        {
+            get
+            {
+                if (messageRepo == null) messageRepo = new GenericRepository<Message>(context);
+                return messageRepo;
+            }
+        }
+
+        public IGenericRepository<Friendship> FriendshipRepo
+        {
+            get
+            {
+                if (friendshipRepo == null) friendshipRepo = new GenericRepository<Friendship>(context);
+                return friendshipRepo;
             }
         }
 
